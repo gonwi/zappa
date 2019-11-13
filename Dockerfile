@@ -1,11 +1,11 @@
 FROM lambci/lambda:build
 
-MAINTAINER "Daniel Whatmuff" <danielwhatmuff@gmail.com>
+MAINTAINER "Gonzalo Astorga" <gonzalo@brainrex.com>
 
 COPY yum.conf /etc/yum.conf
 
 RUN yum clean all && \
-    yum -y install python27-devel python27-virtualenv vim postgresql postgresql-devel mysql mysql-devel gcc lapack-devel blas-devel libyaml-devel && \
+    yum -y install python37-devel python37-virtualenv vim postgresql postgresql-devel mysql mysql-devel gcc lapack-devel blas-devel libyaml-devel && \
     yum --enablerepo=epel -y install hdf5-devel && \
     pip install -U pip && \
     pip install -U zappa mysql-python
